@@ -17,7 +17,7 @@ handler = WebhookHandler('
 db2291b0611e74dfee6b81d66407e509')
 
 
-@app.route("/callback", methods=['POST'])
+@app.route("https://rikibot.herokuapp.com:443/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
@@ -39,7 +39,7 @@ def callback():
 def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=event.message.text))
+        TextSendMessage(text='????'))
 
 
 if __name__ == "__main__":
